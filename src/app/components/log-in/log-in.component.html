@@ -1,22 +1,22 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-  <mat-card class="box">
-    <mat-card-header>
-      <mat-card-title>Ingreso</mat-card-title>
-    </mat-card-header>
+	<mat-card class="box">
+		<mat-card-header>
+			<mat-card-title>Ingreso</mat-card-title>
+		</mat-card-header>
 
-    <form class="example-form">
-      <mat-card-content>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Usuario" />
+		<form name="form" [formGroup]="form" class="example-form">
+			<mat-card-content>
+				<mat-form-field for="user" class="user">
+					<input formControlName="user" [ngClass]="{'is-invalid': form.get('user').touched && form.get('user').invalid}" matInput placeholder="Usuario" />
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Contraseña" />
+					<mat-form-field for="pass" class="pass">
+						<input formControlName="pass" [ngClass]="{'is-invalid': form.get('pass').touched && form.get('pass').invalid}" matInput placeholder="Contraseña" />
         </mat-form-field>
-      </mat-card-content>
-      <button (click)="Login()" mat-stroked-button color="accent" class="btn-block">
+			</mat-card-content>
+			<button (click)="Login()" mat-stroked-button color="accent" class="btn-block" [disabled]="!form.valid">
         Ingresar
       </button>
-    </form>
-  </mat-card>
+		</form>
+	</mat-card>
 </div>
