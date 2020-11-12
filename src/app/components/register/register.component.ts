@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {}
 
-  confirmPassMatch(controlpass: string, matchpass: string) {
+  /*confirmPassMatch(controlpass: string, matchpass: string) {
     return (formGroup: FormGroup) => {
       const control = formGroup.controls[controlpass];
       const matchingControl = formGroup.controls[matchpass];
@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
         matchingControl.setErrors(null);
       }
     };
-  }
+  }*/
 
   Registro() {
     //alert("Registro exitoso");

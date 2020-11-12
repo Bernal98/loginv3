@@ -8,19 +8,27 @@
 			<mat-card-content>
 				<mat-form-field for="user" class="user">
 					<input formControlName="user" [ngClass]="{'is-invalid': form.get('user').touched && form.get('user').invalid}" matInput placeholder="Usuario *" />
-
+          <mat-error>Usuario necesario</mat-error>
+          <mat-icon matSuffix>person</mat-icon>
+        
 				</mat-form-field>
 
 					<mat-form-field for="email" class="email">
-						<input formControlName="email" [ngClass]="{'is-invalid': form.get('email').touched && form.get('email').invalid}" matInput placeholder="Correo *" />
+						<input formControlName="email" [ngClass]="{'is-invalid': form.get('email').touched && form.get('email').invalid}" matInput placeholder="Correo *" >
+            <mat-error>Correo invalido</mat-error>
+            <mat-icon matSuffix>email</mat-icon>
         </mat-form-field>
 
 						<mat-form-field for="pass" class="pass">
 							<input formControlName="pass" [ngClass]="{'is-invalid': form.get('pass').touched && form.get('pass').invalid}" matInput placeholder="Contraseña *" />
+              <mat-error>contraseña mayor a 6 digitos</mat-error>
+              <mat-icon matSuffix>lock</mat-icon>
         </mat-form-field>
 
 							<mat-form-field for="passV" class="passV">
 								<input formControlName="passV" [ngClass]="{'is-invalid': form.get('passV').touched && form.get('passV').invalid}" matInput placeholder="Confirmar Contraseña *" />
+                <mat-error>contraseña mayor a 6 digitos</mat-error>
+                <mat-icon matSuffix>lock</mat-icon>
         </mat-form-field>
 
 								<!--<mat-form-field class="example-full-width">

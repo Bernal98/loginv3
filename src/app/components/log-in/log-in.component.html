@@ -8,10 +8,13 @@
 			<mat-card-content>
 				<mat-form-field for="user" class="user">
 					<input formControlName="user" [ngClass]="{'is-invalid': form.get('user').touched && form.get('user').invalid}" matInput placeholder="Usuario" />
+          <mat-icon matSuffix>person</mat-icon>
         </mat-form-field>
 
 					<mat-form-field for="pass" class="pass">
 						<input formControlName="pass" [ngClass]="{'is-invalid': form.get('pass').touched && form.get('pass').invalid}" matInput placeholder="Contraseña" />
+            <mat-error>contraseña mayor a 6 digitos</mat-error>
+             <mat-icon matSuffix>lock</mat-icon>
         </mat-form-field>
 			</mat-card-content>
 			<button (click)="Login()" mat-stroked-button color="accent" class="btn-block" [disabled]="!form.valid">
